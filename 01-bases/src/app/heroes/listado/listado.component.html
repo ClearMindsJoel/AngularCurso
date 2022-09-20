@@ -1,0 +1,20 @@
+<app-contador></app-contador>
+<app-heroe></app-heroe>
+<p>listado heroes!</p>
+<ul>
+    <li *ngFor="let heroe of heroes; let i=index;">
+        <strong>{{i}}</strong>
+        {{heroe}} 
+    </li>
+</ul>
+<div *ngIf="marcaBorrado else noBorrado">
+    <h3>Heroe Borrado</h3>
+    <span>{{heroeBorrado}}</span>
+</div>
+
+<ng-template #noBorrado>
+    <h3>Heroe Borrado</h3>
+    <span>No ha borrado nada.</span>
+</ng-template>
+<br>
+<button (click)="borrarHeroe()"> Borrar heroe </button>
